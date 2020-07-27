@@ -39,3 +39,14 @@ footer {
   font-family: 'Indie Flower', cursive;
 
 }
+
+#throwDice {
+  display: block;
+  width: 200px;
+  height: 60px;
+  margin: 5% auto;
+  border-radius: 5px;
+  background-color: #4ECCA3;
+  font-family: 'Indie Flower', cursive;
+  font-size: 2rem;
+}

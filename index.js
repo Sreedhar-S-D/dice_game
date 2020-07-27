@@ -1,19 +1,25 @@
+function throwDice() {
 
-var p = Math.floor(Math.random() * 6)  + 1;
-image1 = 'images/dice' + p + '.png';
-console.log(image1);
-$('.img1').attr('src',image1);
-var q = Math.floor(Math.random() * 6)  + 1;
-image2 = 'images/dice' + q + '.png';
-console.log(image2);
-$('.img2').attr('src',image2);
-if( p > q)
-{
-  $('h1').text("Player 1 WON !!");
+  // I need two separate variables for the comparison
+  var number1 = Math.floor(Math.random() * 6 + 1);
+  var number2 = Math.floor(Math.random() * 6 + 1);
+
+  // Query selector for the h1, so I avoid typing it three times in the comparison output
+  var title = document.querySelector(".container h1");
+
+  // Randomize the two dice
+  document.querySelector(".img1").src = "images/dice" + number1 + ".png";
+  document.querySelector(".img2").src = "images/dice" + number2 + ".png";
+
+  // Comparison to see who won
+  if(number1 > number2) {
+    title.innerHTML = "🥊 Player 1 won";
+  } else if (number2 > number1){
+    title.innerHTML = "Player 2 won 🥊";
+  } else {
+    title.innerHTML = "It's a draw!";
+  }
+
 }
-else if (p < q){
-  $('h1').text("Player 2 WON !!");
-}
-else {
-  $('h1').text("DRAW !!");
-}
+
+document.getElementById('throwDice').addEventListener("click", throwDice);
